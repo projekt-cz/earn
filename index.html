@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mia Markovič | Kryptoměnové investice</title>
+<meta name="description" content="Investiční program pod vedením analytičky Mia Markovič. Výnosy za 14–21 dní.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#0d0d0d;color:#e8e8e8;font-size:14px;line-height:1.5;overflow-x:hidden;}
+
+/* NAV */
+.nav{background:#111;border-bottom:1px solid #1e1e1e;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:700;color:#f0b90b;letter-spacing:.5px;text-decoration:none;}
+.logo-icon{width:28px;height:28px;background:#f0b90b;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-contact-btn{background:transparent;border:1px solid #2a2a2a;border-radius:6px;padding:7px 14px;font-size:12px;color:#e8e8e8;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none;transition:.2s;}
+.nav-contact-btn:hover{border-color:#f0b90b;color:#f0b90b;}
+
+/* URGENCY BANNER — top */
+.top-banner{background:#1a1409;border-bottom:1px solid #f0b90b22;padding:9px 32px;text-align:center;font-size:13px;color:#c9a227;font-weight:500;letter-spacing:.2px;}
+.top-banner span{color:#f0b90b;font-weight:700;}
+
+/* HERO */
+.hero{background:#111;padding:36px 32px 32px;border-bottom:1px solid #1e1e1e;display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:20px;padding:5px 12px;font-size:11px;color:#f0b90b;margin-bottom:12px;}
+.hero h1{font-size:30px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:10px;}
+.hero h1 span{color:#f0b90b;}
+.hero-desc{font-size:14px;color:#888;line-height:1.7;margin-bottom:18px;}
+.analyst-card{background:#161616;border:1px solid #2a2a2a;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.analyst-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;background:#1f1f1f;border:1px solid #333;flex-shrink:0;}
+.analyst-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.verified-badge{display:inline-flex;align-items:center;gap:4px;background:#0d2e1a;color:#0ecb81;border-radius:20px;padding:2px 8px;font-size:11px;font-weight:500;margin-bottom:3px;}
+.analyst-name{font-size:14px;font-weight:600;color:#fff;}
+.analyst-role{font-size:11px;color:#777;}
+.urgency-banner{background:#1f1a08;border:1px solid #f0b90b33;border-radius:10px;padding:14px 16px;margin-bottom:18px;}
+.urgency-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.urgency-label{font-size:12px;color:#aaa;display:flex;align-items:center;gap:5px;}
+.urgency-count{font-size:13px;font-weight:700;color:#f0b90b;}
+.progress-track{background:#222;border-radius:10px;height:7px;overflow:hidden;}
+.progress-fill{background:#f0b90b;height:100%;border-radius:10px;width:0%;transition:width .5s;}
+.urgency-next{display:flex;align-items:center;gap:6px;margin-top:7px;}
+.urgency-next-label{font-size:11px;color:#666;}
+.urgency-next-timer{font-size:12px;font-weight:700;color:#f0b90b;}
+.urgency-next-timer span{background:#2a1f00;border:1px solid #f0b90b33;border-radius:4px;padding:1px 5px;}
+.urgency-note{font-size:11px;color:#555;margin-top:5px;}
+.condition-strip{display:flex;align-items:center;gap:10px;background:#1a1409;border:1px solid #f0b90b44;border-radius:8px;padding:12px 14px;margin-bottom:20px;}
+.condition-strip-title{font-size:13px;font-weight:600;color:#f0b90b;}
+.condition-strip-desc{font-size:11px;color:#888;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-gold{background:#f0b90b;color:#0d0d0d;border:none;border-radius:6px;padding:12px 22px;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:.2s;}
+.btn-gold:hover{background:#d9a70a;}
+.btn-dark{background:#1a1a1a;color:#e8e8e8;border:1px solid #2a2a2a;border-radius:6px;padding:12px 22px;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.2s;}
+.btn-dark:hover{border-color:#f0b90b;color:#f0b90b;}
+.hero-photo-wrap{display:flex;flex-direction:column;align-items:stretch;}
+.hero-photo-img{width:100%;height:320px;object-fit:cover;object-position:center top;border-radius:12px 12px 0 0;display:block;mask-image:linear-gradient(to bottom,black 55%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,black 55%,transparent 100%);}
+.hero-photo-stats{display:flex;flex-direction:column;gap:6px;margin-top:-4px;}
+.hero-stat{background:#161616;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:10px 14px;display:flex;align-items:center;gap:10px;}
+.hero-stat:first-child{border-radius:0;}
+.hero-stat:last-child{border-radius:0 0 10px 10px;}
+.hero-stat-val{font-size:14px;font-weight:700;color:#f0b90b;white-space:nowrap;}
+.hero-stat-lbl{font-size:11px;color:#666;}
+
+/* MAIN GRID */
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 32px;}
+.card{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:20px;}
+.card-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.card-title .ti{color:#f0b90b;}
+.divider-gold{width:28px;height:2px;background:#f0b90b;border-radius:2px;margin:8px 0 14px;}
+.ptbl{width:100%;border-collapse:collapse;}
+.ptbl th{text-align:left;font-size:11px;color:#555;font-weight:400;padding:5px 8px;border-bottom:1px solid #1e1e1e;}
+.ptbl td{padding:10px 8px;font-size:13px;border-bottom:1px solid #1a1a1a;color:#e8e8e8;vertical-align:middle;}
+.ptbl tr:last-child td{border-bottom:none;}
+.ptbl tr:hover td{background:#161616;}
+.coin-cell{display:flex;align-items:center;gap:8px;}
+.coin-logo{width:28px;height:28px;border-radius:50%;flex-shrink:0;object-fit:contain;background:#1a1a1a;padding:3px;}
+.coin-name{font-weight:500;font-size:13px;}
+.coin-ticker{font-size:11px;color:#555;}
+.apy-val{color:#0ecb81;font-weight:700;font-size:13px;white-space:nowrap;}
+.apy-sub{font-size:10px;color:#555;display:block;}
+.tbl-invest-btn{background:#f0b90b;color:#0d0d0d;border:none;border-radius:4px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;transition:.2s;white-space:nowrap;}
+.tbl-invest-btn:hover{background:#d9a70a;}
+.calc-field{margin-bottom:12px;}
+.calc-label{font-size:12px;color:#888;margin-bottom:5px;display:block;}
+.calc-row{display:flex;gap:8px;}
+.calc-input{flex:1;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;padding:10px 12px;font-size:14px;color:#e8e8e8;width:100%;outline:none;transition:.2s;}
+.calc-input:focus{border-color:#f0b90b;}
+.calc-select{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;padding:10px;font-size:13px;color:#e8e8e8;cursor:pointer;outline:none;}
+.calc-unit{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;padding:10px 12px;font-size:13px;color:#888;display:flex;align-items:center;white-space:nowrap;}
+.calc-go{width:100%;background:#f0b90b;color:#0d0d0d;border:none;border-radius:6px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;}
+.calc-go:hover{background:#d9a70a;}
+.calc-result-box{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:14px;}
+.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #232323;}
+.calc-result-row:last-child{border-bottom:none;}
+.calc-result-label{font-size:12px;color:#888;}
+.calc-result-val{font-size:15px;font-weight:700;color:#f0b90b;}
+.calc-result-val.big{font-size:20px;}
+.calc-result-val.muted{color:#e8e8e8;}
+.calc-hint{font-size:11px;color:#555;margin-top:8px;text-align:center;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.why-item{display:flex;align-items:flex-start;gap:8px;padding:8px;}
+.why-icon{color:#f0b90b;font-size:16px;margin-top:1px;flex-shrink:0;}
+.why-title{font-size:12px;font-weight:500;color:#e8e8e8;}
+.why-desc{font-size:11px;color:#666;}
+
+/* STEPS */
+.steps-sec{margin:0 32px 16px;background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:24px;}
+.steps-title{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px;}
+.steps-title .ti{color:#f0b90b;}
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:20px;position:relative;}
+.steps-row::before{content:'';position:absolute;top:27px;left:calc(16.6% + 14px);right:calc(16.6% + 14px);height:2px;background:linear-gradient(90deg,#f0b90b,#f0b90b44);z-index:0;}
+.step-item{text-align:center;position:relative;z-index:1;padding:0 8px;}
+.step-circle{width:54px;height:54px;border-radius:50%;background:#f0b90b;color:#0d0d0d;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;}
+.step-title{font-size:13px;font-weight:600;color:#e8e8e8;margin-bottom:4px;}
+.step-desc{font-size:12px;color:#666;line-height:1.5;}
+.step-action{display:inline-block;margin-top:6px;font-size:12px;color:#f0b90b;font-weight:500;text-decoration:none;}
+
+/* STRATEGY */
+.strategy-sec{margin:0 32px 16px;background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:24px;}
+.strategy-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.strategy-title .ti{color:#f0b90b;}
+.strategy-text{font-size:13px;color:#777;line-height:1.8;margin-top:12px;}
+.strategy-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px;}
+.strategy-step{background:#161616;border:1px solid #1e1e1e;border-radius:8px;padding:12px;}
+.strategy-step-num{width:22px;height:22px;border-radius:50%;background:#f0b90b22;color:#f0b90b;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:7px;}
+.strategy-step-title{font-size:12px;font-weight:600;color:#e8e8e8;margin-bottom:3px;}
+.strategy-step-desc{font-size:11px;color:#666;line-height:1.5;}
+
+/* SECURITY — clean */
+.security-sec{background:#111;border:1px solid #1e1e1e;border-radius:12px;margin:0 32px 16px;padding:24px;}
+.sec-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:8px;}
+.sec-title{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px;}
+.sec-title .ti{color:#0ecb81;}
+.sec-pct-inline{font-size:22px;font-weight:700;color:#0ecb81;background:#0d2e1a;border:1px solid #0ecb8133;border-radius:8px;padding:4px 14px;}
+.sec-desc{font-size:13px;color:#666;margin-bottom:16px;line-height:1.6;}
+.sec-items{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px;}
+.sec-item{background:#161616;border:1px solid #1e1e1e;border-radius:8px;padding:14px 12px;}
+.sec-item-icon{font-size:22px;margin-bottom:6px;display:block;}
+.sec-item-title{font-size:12px;font-weight:600;color:#e8e8e8;margin-bottom:2px;}
+.sec-item-desc{font-size:11px;color:#555;}
+.sec-bottom-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.sec-small-badge{background:#161616;border:1px solid #2a2a2a;border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:10px;}
+.sec-small-icon{font-size:18px;flex-shrink:0;}
+.sec-small-title{font-size:13px;font-weight:600;color:#e8e8e8;}
+.sec-small-desc{font-size:11px;color:#555;}
+
+/* COMPARISON */
+.cmp-sec{margin:0 32px 16px;}
+.cmp-sec-head{font-size:15px;font-weight:600;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.cmp-sec-head .ti{color:#f0b90b;}
+.cmp-sec-sub{font-size:13px;color:#666;margin-bottom:16px;line-height:1.6;}
+.cmp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.cmp-card{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:20px 16px;}
+.cmp-card.cmp-featured{border-color:#f0b90b55;background:#1a1409;}
+.cmp-icon{font-size:28px;margin-bottom:10px;display:block;}
+.cmp-name{font-size:12px;color:#888;margin-bottom:8px;}
+.cmp-amount{font-size:22px;font-weight:700;margin-bottom:3px;}
+.cmp-amount.green{color:#0ecb81;}
+.cmp-amount.blue{color:#378add;}
+.cmp-amount.red{color:#e84122;}
+.cmp-pct{font-size:13px;font-weight:600;margin-bottom:12px;}
+.cmp-pct.green{color:#0ecb81;}
+.cmp-pct.blue{color:#378add;}
+.cmp-pct.red{color:#e84122;}
+.cmp-bar-wrap{background:#1e1e1e;border-radius:4px;height:5px;overflow:hidden;margin-bottom:10px;}
+.cmp-bar{height:100%;border-radius:4px;}
+.cmp-desc{font-size:11px;color:#555;line-height:1.5;}
+.cmp-disclaimer{font-size:11px;color:#444;margin-top:12px;line-height:1.5;}
+
+/* COMPARISON MOBILE */
+.fear-sec{margin:0 32px 16px;background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:24px;}
+.fear-header{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;}
+.fear-col-head{padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;border-radius:8px 8px 0 0;}
+.fear-col-head.left{background:#1f1212;color:#e84122;}
+.fear-col-head.right{background:#0d2416;color:#0ecb81;}
+.fear-rows{display:flex;flex-direction:column;gap:2px;}
+.fear-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.fear-cell{padding:14px;display:flex;gap:10px;align-items:flex-start;}
+.fear-cell.left{background:#181010;}
+.fear-cell.right{background:#0a1812;}
+.fear-cell:first-child{border-radius:0;}
+.fear-row:last-child .fear-cell.left{border-radius:0 0 0 8px;}
+.fear-row:last-child .fear-cell.right{border-radius:0 0 8px 0;}
+.fear-emoji{font-size:18px;flex-shrink:0;margin-top:1px;}
+.fear-title-bad{font-size:12px;font-weight:600;color:#e84122;margin-bottom:3px;}
+.fear-title-good{font-size:12px;font-weight:600;color:#0ecb81;margin-bottom:3px;}
+.fear-text{font-size:11px;color:#666;line-height:1.55;}
+.fear-cta{margin-top:14px;background:#161616;border:1px solid #2a2a2a;border-radius:8px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.reviews-sec{padding:8px 32px 24px;}
+.reviews-head{font-size:16px;font-weight:600;color:#fff;margin-bottom:3px;}
+.reviews-sub{font-size:12px;color:#666;margin-bottom:14px;}
+.reviews-carousel{position:relative;overflow:hidden;}
+.reviews-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;cursor:grab;}
+.reviews-track::-webkit-scrollbar{display:none;}
+.reviews-track.grabbing{cursor:grabbing;user-select:none;}
+.review-card{background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px;min-width:240px;max-width:240px;scroll-snap-align:start;flex-shrink:0;}
+.review-top{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.review-avatar{width:30px;height:30px;border-radius:50%;background:#1f1f1f;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#888;flex-shrink:0;}
+.review-name{font-size:12px;font-weight:600;color:#e8e8e8;}
+.review-loc{font-size:10px;color:#555;}
+.review-stars{color:#f0b90b;font-size:11px;margin-bottom:3px;}
+.review-date{font-size:10px;color:#444;margin-bottom:5px;}
+.review-text{font-size:11.5px;color:#888;line-height:1.6;}
+.reviews-nav{display:flex;gap:7px;margin-top:12px;}
+.reviews-nav button{background:#1a1a1a;border:1px solid #2a2a2a;color:#888;border-radius:6px;width:30px;height:30px;cursor:pointer;font-size:14px;transition:.2s;}
+.reviews-nav button:hover{border-color:#f0b90b;color:#f0b90b;}
+
+/* CONTACT */
+.contact-sec{margin:0 32px 24px;background:#161616;border:1px solid #2a2a2a;border-radius:12px;padding:28px;display:grid;grid-template-columns:1fr 160px;gap:24px;align-items:center;}
+.contact-left h2{font-size:18px;font-weight:600;color:#fff;margin-bottom:6px;}
+.contact-left p{font-size:13px;color:#888;margin-bottom:18px;line-height:1.6;}
+.contact-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:.2s;}
+.contact-btn.whatsapp{background:#25d366;color:#fff;}
+.contact-btn.whatsapp:hover{background:#1db954;}
+.contact-btn.email{background:#1a1a1a;border:1px solid #2a2a2a;color:#e8e8e8;}
+.contact-btn.email:hover{border-color:#f0b90b;color:#f0b90b;}
+.contact-photo{border-radius:10px;width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top;}
+
+/* STATS */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1e1e1e;margin:0 32px 28px;border-radius:12px;overflow:hidden;border:1px solid #1e1e1e;}
+.stat-item{background:#111;padding:18px 12px;text-align:center;}
+.stat-icon{font-size:18px;color:#0ecb81;margin-bottom:6px;}
+.stat-val{font-size:18px;font-weight:700;color:#f0b90b;display:block;}
+.stat-label{font-size:11px;color:#666;}
+
+/* FLOATING */
+.wa-float{position:fixed;bottom:22px;right:22px;width:50px;height:50px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;transition:.2s;}
+.wa-float:hover{background:#1db954;transform:scale(1.08);}
+.wa-float .ti{color:#fff;font-size:24px;}
+
+/* STICKY MOBILE CTA */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid #222;padding:10px 16px;z-index:998;gap:8px;}
+
+/* EXIT POPUP */
+.exit-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:2000;align-items:center;justify-content:center;}
+.exit-overlay.show{display:flex;}
+.exit-popup{background:#161616;border:1px solid #2a2a2a;border-radius:14px;padding:28px 24px;max-width:400px;width:90%;text-align:center;position:relative;}
+.exit-popup-close{position:absolute;top:10px;right:12px;background:none;border:none;color:#555;font-size:18px;cursor:pointer;}
+.exit-popup-close:hover{color:#e8e8e8;}
+.exit-popup-icon{font-size:36px;margin-bottom:10px;}
+.exit-popup h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px;}
+.exit-popup p{font-size:13px;color:#888;margin-bottom:16px;line-height:1.6;}
+.exit-popup-count{font-size:22px;font-weight:700;color:#f0b90b;margin-bottom:4px;}
+.exit-popup-sub{font-size:12px;color:#666;margin-bottom:16px;}
+.exit-popup-btns{display:flex;flex-direction:column;gap:8px;}
+.exit-popup .btn-gold{width:100%;justify-content:center;font-size:14px;padding:13px;}
+.exit-popup-skip{font-size:12px;color:#555;cursor:pointer;margin-top:4px;}
+.exit-popup-skip:hover{color:#888;}
+
+/* ═══════ MOBILE max-768px ═══════ */
+@media(max-width:768px){
+  .nav{padding:10px 16px;}
+  .top-banner{padding:8px 16px;font-size:12px;}
+
+  /* Hero */
+  .hero{grid-template-columns:1fr;padding:20px 16px 20px;gap:16px;}
+  .hero h1{font-size:22px;}
+  .hero-desc{font-size:13px;margin-bottom:14px;}
+  .analyst-card{margin-bottom:14px;}
+  .urgency-banner{margin-bottom:14px;}
+  .condition-strip{margin-bottom:16px;}
+  .hero-btns{flex-direction:column;gap:8px;}
+  .btn-gold,.btn-dark{width:100%;justify-content:center;padding:12px;}
+
+  /* Hero photo */
+  .hero-photo-wrap{flex-direction:row;align-items:flex-start;gap:10px;}
+  .hero-photo-img{width:110px;height:145px;border-radius:10px 10px 0 0;flex-shrink:0;}
+  .hero-photo-stats{flex:1;margin-top:0;gap:4px;}
+  .hero-stat{padding:7px 10px;border-radius:6px;}
+  .hero-stat:first-child,.hero-stat:last-child{border-radius:6px;}
+  .hero-stat-val{font-size:12px;}
+  .hero-stat-lbl{font-size:10px;}
+
+  /* Main grid */
+  .main-grid{grid-template-columns:1fr;padding:12px 16px;gap:12px;}
+
+  /* Table */
+  .apy-val{font-size:11px;}
+  .coin-name{font-size:12px;}
+  .coin-logo{width:24px;height:24px;}
+  .tbl-invest-btn{padding:5px 8px;font-size:11px;}
+
+  /* Steps */
+  .steps-sec{margin:0 16px 12px;padding:18px 16px;}
+  .steps-row{grid-template-columns:1fr;gap:14px;}
+  .steps-row::before{display:none;}
+  .step-circle{width:42px;height:42px;font-size:16px;}
+
+  /* Strategy */
+  .strategy-sec{margin:0 16px 12px;padding:18px 16px;}
+  .strategy-steps{grid-template-columns:1fr 1fr;}
+
+  /* Security */
+  .security-sec{margin:0 16px 12px;padding:18px 16px;}
+  .sec-header{flex-direction:column;align-items:flex-start;}
+  .sec-items{grid-template-columns:1fr 1fr;}
+  .sec-bottom-row{grid-template-columns:1fr;}
+
+  /* Comparison */
+  .cmp-sec{margin:0 16px 12px;}
+  .cmp-grid{grid-template-columns:1fr;}
+
+  /* Fear vs reality */
+  .fear-sec{margin:0 16px 12px;padding:18px 16px;}
+  .fear-header{grid-template-columns:1fr;}
+  .fear-col-head.right{border-radius:0;border-top:2px solid #1e1e1e;}
+  .fear-row{grid-template-columns:1fr;}
+  .fear-row:last-child .fear-cell.left{border-radius:0;}
+  .fear-row:last-child .fear-cell.right{border-radius:0 0 8px 8px;}
+
+  /* Reviews */
+  .reviews-sec{padding:8px 16px 20px;}
+  .review-card{min-width:200px;max-width:200px;}
+
+  /* Contact */
+  .contact-sec{grid-template-columns:1fr;margin:0 16px 20px;padding:20px 16px;gap:16px;}
+  .contact-btns{flex-direction:column;}
+  .contact-btn{width:100%;justify-content:center;}
+  .contact-photo{width:100%;height:160px;aspect-ratio:unset;}
+
+  /* Stats */
+  .stats-bar{grid-template-columns:1fr 1fr;margin:0 16px 20px;}
+  .stat-val{font-size:15px;}
+  .stat-item{padding:14px 10px;}
+
+  /* Float */
+  .wa-float{bottom:70px;right:14px;width:44px;height:44px;}
+  .wa-float .ti{font-size:20px;}
+
+  /* Sticky */
+  .sticky-cta{display:none;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#" class="logo">
+    <div class="logo-icon"><i class="ti ti-diamond" style="font-size:15px;color:#0d0d0d;" aria-hidden="true"></i></div>
+    CRYPTO<span style="color:#f0b90b;">EARN</span>
+  </a>
+  <div class="nav-right">
+    <span style="font-size:12px;color:#888;">Vede: <b style="color:#e8e8e8;">Mia Markovič</b></span>
+    <a href="https://wa.me/420704800338" target="_blank" class="nav-contact-btn">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Kontakt
+    </a>
+  </div>
+</nav>
+
+<div class="top-banner">
+  🔥 Tisíce lidí na tuto příležitost čekají — <span>nezmeškej ji!</span> Místa jsou omezena a program probíhá pouze pro ověřené účastníky.
+</div>
+
+<div class="hero">
+  <div>
+    <div class="hero-tag">
+      <i class="ti ti-brand-binance" style="font-size:13px;" aria-hidden="true"></i>
+      Společný projekt s Binance Earn
+    </div>
+    <h1>Investiční nabídka pod vedením<br>analytičky <span>Mia Markovič</span></h1>
+    <p class="hero-desc">Stabilní výnosy, diverzifikované portfolio a moderní technologie pro bezpečné zhodnocení vašich prostředků za pouhých 14–21 dní.</p>
+
+    <div class="analyst-card">
+      <div class="analyst-avatar">
+        <img src="data:image/jpeg;base64,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" alt="Mia Markovič">
+      </div>
+      <div>
+        <div class="verified-badge"><i class="ti ti-circle-check" style="font-size:11px;" aria-hidden="true"></i> Ověřený analytik</div>
+        <div class="analyst-name">Mia Markovič</div>
+        <div class="analyst-role">Analytička kryptoměnových trhů · řízení rizik</div>
+      </div>
+    </div>
+
+    <div class="urgency-banner">
+      <div class="urgency-top">
+        <span class="urgency-label"><i class="ti ti-users" aria-hidden="true"></i> Účastníci aktuálního cyklu</span>
+        <span class="urgency-count"><span id="urgency-num">37</span> / 150 se připojilo</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="urgency-bar"></div></div>
+      <div class="urgency-next">
+        <span class="urgency-next-label">⏱ Další účastník za:</span>
+        <span class="urgency-next-timer">
+          <span id="u-h">--</span>h
+          <span id="u-m">--</span>m
+          <span id="u-s">--</span>s
+        </span>
+      </div>
+      <div class="urgency-note">Program přijímá maximálně 150 účastníků v aktuálním cyklu.</div>
+    </div>
+
+    <div class="condition-strip">
+      <i class="ti ti-clock" style="color:#f0b90b;font-size:20px;flex-shrink:0;" aria-hidden="true"></i>
+      <div>
+        <div class="condition-strip-title">Podmínka účasti: 14–21 dní pro ověřenou osobu</div>
+        <div class="condition-strip-desc">Po ověření identity můžete program zahájit ihned. Účast v programu je možná jednou ročně — využijte tuto příležitost naplno.</div>
+      </div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="https://wa.me/420704800338" target="_blank" class="btn-gold">
+        <i class="ti ti-arrow-right" aria-hidden="true"></i> Začít investovat
+      </a>
+      <button class="btn-dark" onclick="scrollToCalc()">
+        <i class="ti ti-calculator" aria-hidden="true"></i> Vypočítat výnos
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-photo-wrap">
+    <img class="hero-photo-img" src="data:image/jpeg;base64,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" alt="Mia Markovič">
+    <div class="hero-photo-stats">
+      <div class="hero-stat"><span class="hero-stat-val">5+ let</span><span class="hero-stat-lbl">zkušeností v krypto analytice</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">1 200+</span><span class="hero-stat-lbl">spokojených účastníků</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">4.9 / 5</span><span class="hero-stat-lbl">průměrné hodnocení klientů</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="main-grid">
+  <div class="card">
+    <div class="card-title"><i class="ti ti-chart-bar" aria-hidden="true"></i> Investiční produkty</div>
+    <div class="divider-gold"></div>
+    <table class="ptbl">
+      <thead><tr><th>Kryptoměna</th><th>Výnos / den</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png" alt="XRP"><div><div class="coin-name">XRP</div><div class="coin-ticker">XRP</div></div></div></td><td><span class="apy-val">3.65%–41.20%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/975/small/cardano.png" alt="ADA"><div><div class="coin-name">Cardano</div><div class="coin-ticker">ADA</div></div></div></td><td><span class="apy-val">5.98%–58.77%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="BTC"><div><div class="coin-name">Bitcoin</div><div class="coin-ticker">BTC</div></div></div></td><td><span class="apy-val">6.40%–64.10%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="ETH"><div><div class="coin-name">Ethereum</div><div class="coin-ticker">ETH</div></div></div></td><td><span class="apy-val">7.85%–71.30%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png" alt="LINK"><div><div class="coin-name">Chainlink</div><div class="coin-ticker">LINK</div></div></div></td><td><span class="apy-val">9.10%–83.45%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png" alt="BNB"><div><div class="coin-name">BNB</div><div class="coin-ticker">BNB</div></div></div></td><td><span class="apy-val">11.50%–95.60%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png" alt="AVAX"><div><div class="coin-name">Avalanche</div><div class="coin-ticker">AVAX</div></div></div></td><td><span class="apy-val">14.20%–108.90%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+        <tr><td><div class="coin-cell"><img class="coin-logo" src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="SOL"><div><div class="coin-name">Solana</div><div class="coin-ticker">SOL</div></div></div></td><td><span class="apy-val">18.30%–124.88%</span><span class="apy-sub">14–21 dní</span></td><td><button class="tbl-invest-btn" onclick="scrollToCalc()">Investovat</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:14px;" id="calc-anchor">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-calculator" aria-hidden="true"></i> Kalkulačka denního výnosu</div>
+      <div class="divider-gold"></div>
+      <div class="calc-field">
+        <span class="calc-label">Investovaná částka</span>
+        <div class="calc-row">
+          <input class="calc-input" type="number" id="c-amount" placeholder="např. 50000">
+          <select class="calc-select" id="c-cur"><option>CZK</option><option>EUR</option><option>USD</option></select>
+        </div>
+      </div>
+      <div class="calc-field">
+        <span class="calc-label">Denní výnos (%)</span>
+        <div class="calc-row">
+          <input class="calc-input" type="number" id="c-rate" placeholder="např. 10">
+          <div class="calc-unit">% / den</div>
+        </div>
+      </div>
+      <div class="calc-field">
+        <span class="calc-label">Doba programu</span>
+        <select class="calc-input" id="c-days">
+          <option value="14">14 dní</option>
+          <option value="18" selected>18 dní</option>
+          <option value="21">21 dní</option>
+        </select>
+      </div>
+      <button class="calc-go" onclick="doCalc()"><i class="ti ti-calculator" aria-hidden="true"></i> Spočítat výnos</button>
+      <div class="calc-result-box">
+        <div class="calc-result-row"><span class="calc-result-label">Denní zisk</span><span class="calc-result-val" id="c-daily">—</span></div>
+        <div class="calc-result-row"><span class="calc-result-label">Celkový zisk</span><span class="calc-result-val big" id="c-profit">—</span></div>
+        <div class="calc-result-row"><span class="calc-result-label">Hodnota na konci</span><span class="calc-result-val muted" id="c-total">—</span></div>
+      </div>
+      <div class="calc-hint">Zadejte částku a denní % z tabulky vlevo.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-star" aria-hidden="true"></i> Proč investovat s námi?</div>
+      <div class="divider-gold"></div>
+      <div class="why-grid">
+        <div class="why-item"><i class="ti ti-shield why-icon" aria-hidden="true"></i><div><div class="why-title">Bezpečnost aktiv</div><div class="why-desc">Moderní ochrana</div></div></div>
+        <div class="why-item"><i class="ti ti-bolt why-icon" aria-hidden="true"></i><div><div class="why-title">Okamžitý přístup</div><div class="why-desc">Kdykoliv</div></div></div>
+        <div class="why-item"><i class="ti ti-trending-up why-icon" aria-hidden="true"></i><div><div class="why-title">Rychlé výnosy</div><div class="why-desc">Za 14–21 dní</div></div></div>
+        <div class="why-item"><i class="ti ti-chart-pie why-icon" aria-hidden="true"></i><div><div class="why-title">Diverzifikace</div><div class="why-desc">Různé kryptoměny</div></div></div>
+        <div class="why-item"><i class="ti ti-cpu why-icon" aria-hidden="true"></i><div><div class="why-title">Moderní technologie</div><div class="why-desc">Spolehlivé řešení</div></div></div>
+        <div class="why-item"><i class="ti ti-headset why-icon" aria-hidden="true"></i><div><div class="why-title">Osobní podpora</div><div class="why-desc">Mia k dispozici</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="steps-sec">
+  <div class="steps-title"><i class="ti ti-list-check" aria-hidden="true"></i> Jak začít — 3 jednoduché kroky</div>
+  <div class="divider-gold"></div>
+  <div class="steps-row">
+    <div class="step-item">
+      <div class="step-circle">1</div>
+      <div class="step-title">Kontaktujte Miu</div>
+      <div class="step-desc">Napište přes WhatsApp nebo email. Mia odpoví do pár hodin.</div>
+      <a href="https://wa.me/420704800338" target="_blank" class="step-action">→ Napsat nyní</a>
+    </div>
+    <div class="step-item">
+      <div class="step-circle">2</div>
+      <div class="step-title">Verifikace identity</div>
+      <div class="step-desc">Jednoduchý online proces ověření. Trvá jen pár minut.</div>
+      <span class="step-action">→ Rychle a bezpečně</span>
+    </div>
+    <div class="step-item">
+      <div class="step-circle">3</div>
+      <div class="step-title">Sledujte výnos</div>
+      <div class="step-desc">Za 14–21 dní obdržíte výnos. Jednoduché a spolehlivé.</div>
+      <span class="step-action">→ Výnos každý den</span>
+    </div>
+  </div>
+</div>
+
+<div class="strategy-sec">
+  <div class="strategy-title"><i class="ti ti-route" aria-hidden="true"></i> Jak strategie funguje</div>
+  <div class="divider-gold"></div>
+  <p class="strategy-text">Strategie projektu spočívá ve vytvoření spořicího investičního účtu navázaného na trh kryptoměn bez nutnosti přímého nákupu digitálních aktiv. Uživatelé vkládají svůj kapitál do společného fondu a výnos je generován z poplatků za každodenní transakce uskutečňované v rámci ekosystému. Získané příjmy jsou následně rozdělovány mezi účastníky poměrně podle výše jejich vkladu.</p>
+  <div class="strategy-steps">
+    <div class="strategy-step"><div class="strategy-step-num">1</div><div class="strategy-step-title">Vklad kapitálu</div><div class="strategy-step-desc">Vložíte prostředky do společného fondu programu.</div></div>
+    <div class="strategy-step"><div class="strategy-step-num">2</div><div class="strategy-step-title">Aktivita ekosystému</div><div class="strategy-step-desc">Fond generuje výnos z poplatků za denní transakce.</div></div>
+    <div class="strategy-step"><div class="strategy-step-num">3</div><div class="strategy-step-title">Rozdělení výnosu</div><div class="strategy-step-desc">Příjmy se rozdělují podle výše vkladu účastníka.</div></div>
+    <div class="strategy-step"><div class="strategy-step-num">4</div><div class="strategy-step-title">Pasivní příjem</div><div class="strategy-step-desc">Sledujete růst vkladu po dobu 14–21 dní.</div></div>
+  </div>
+</div>
+
+<div class="security-sec">
+  <div class="sec-header">
+    <div class="sec-title"><i class="ti ti-shield-check" aria-hidden="true"></i> Bezpečnost a garance</div>
+    <div class="sec-pct-inline">98% pojištěno</div>
+  </div>
+  <p class="sec-desc">Vaše prostředky jsou chráněny pokročilými technologiemi. 98 % aktiv je pojištěno a uloženo v chladném úložišti.</p>
+  <div class="sec-items">
+    <div class="sec-item"><span class="sec-item-icon">🔐</span><div class="sec-item-title">Studené úložiště</div><div class="sec-item-desc">98 % offline</div></div>
+    <div class="sec-item"><span class="sec-item-icon">🛡️</span><div class="sec-item-title">Pojištění aktiv</div><div class="sec-item-desc">Plné krytí</div></div>
+    <div class="sec-item"><span class="sec-item-icon">🔑</span><div class="sec-item-title">Víceúrovňová ochrana</div><div class="sec-item-desc">2FA + šifrování</div></div>
+    <div class="sec-item"><span class="sec-item-icon">📋</span><div class="sec-item-title">Transparentnost</div><div class="sec-item-desc">Férové podmínky</div></div>
+  </div>
+  <div class="sec-bottom-row">
+    <div class="sec-small-badge"><span class="sec-small-icon">✅</span><div><div class="sec-small-title">Pravidelné audity</div><div class="sec-small-desc">Bezpečnost ověřována každý měsíc</div></div></div>
+    <div class="sec-small-badge"><span class="sec-small-icon">⚡</span><div><div class="sec-small-title">Okamžitý přístup</div><div class="sec-small-desc">K prostředkům kdykoliv</div></div></div>
+  </div>
+</div>
+
+<div class="cmp-sec">
+  <div class="cmp-sec-head"><i class="ti ti-chart-bar" aria-hidden="true"></i> Proč investovat s Mií — porovnání</div>
+  <div class="divider-gold"></div>
+  <p class="cmp-sec-sub">Co se stane s <strong>100 000 CZK</strong> za 1 rok? Porovnáme tři scénáře.</p>
+  <div class="cmp-grid">
+
+    <div class="cmp-card cmp-featured">
+      <span class="cmp-icon">🚀</span>
+      <div class="cmp-name">Kryptoinvestice (Mia program)</div>
+      <div class="cmp-amount green">až 438 000 CZK</div>
+      <div class="cmp-pct green">↑ až +338 % ročně</div>
+      <div class="cmp-bar-wrap"><div class="cmp-bar" style="width:100%;background:#0ecb81;"></div></div>
+      <div class="cmp-desc">14–21denní cykly s reinvesticí výnosu. Program vede osobně Mia Markovič.</div>
+    </div>
+
+    <div class="cmp-card">
+      <span class="cmp-icon">🏦</span>
+      <div class="cmp-name">Bankovní spořicí účet</div>
+      <div class="cmp-amount blue">103 500 CZK</div>
+      <div class="cmp-pct blue">↑ +3,5 % ročně</div>
+      <div class="cmp-bar-wrap"><div class="cmp-bar" style="width:8%;background:#378add;"></div></div>
+      <div class="cmp-desc">Průměrný úrok spořicích účtů v ČR. Inflaci sotva pokryje.</div>
+    </div>
+
+    <div class="cmp-card">
+      <span class="cmp-icon">📉</span>
+      <div class="cmp-name">Peníze bez investice (inflace)</div>
+      <div class="cmp-amount red">93 000 CZK</div>
+      <div class="cmp-pct red">↓ −7 % reálná hodnota</div>
+      <div class="cmp-bar-wrap"><div class="cmp-bar" style="width:3%;background:#e84122;"></div></div>
+      <div class="cmp-desc">Peníze ležící na účtu ztrácejí hodnotu každým rokem kvůli inflaci.</div>
+    </div>
+
+  </div>
+  <div class="cmp-disclaimer">* Výnosy z kryptoinvestic jsou modelové a slouží pouze pro ilustraci na základě parametrů programu. Skutečné výsledky se mohou lišit v závislosti na podmínkách trhu.</div>
+</div>
+
+<div class="fear-sec">
+  <div class="card-title"><i class="ti ti-brain" aria-hidden="true"></i> Strachy vs realita</div>
+  <div class="divider-gold"></div>
+
+  <div class="fear-header">
+    <div class="fear-col-head left"><i class="ti ti-mood-sad" aria-hidden="true"></i> Co si lidé myslí</div>
+    <div class="fear-col-head right"><i class="ti ti-circle-check" aria-hidden="true"></i> Co se skutečně děje</div>
+  </div>
+
+  <div class="fear-rows">
+    <div class="fear-row">
+      <div class="fear-cell left">
+        <span class="fear-emoji">💸</span>
+        <div>
+          <div class="fear-title-bad">„Přijdu o všechny peníze"</div>
+          <div class="fear-text">Bojím se že investice skončí ztrátou a vrátím se s nulou.</div>
+        </div>
+      </div>
+      <div class="fear-cell right">
+        <span class="fear-emoji">🛡️</span>
+        <div>
+          <div class="fear-title-good">98 % aktiv je pojištěno</div>
+          <div class="fear-text">Prostředky jsou chráněny víceúrovňovým zabezpečením a studeným úložištěm.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fear-row">
+      <div class="fear-cell left">
+        <span class="fear-emoji">🤷</span>
+        <div>
+          <div class="fear-title-bad">„Nerozumím tomu, je to složité"</div>
+          <div class="fear-text">Krypto je pro odborníky, já se v tom nevyznám a udělám chybu.</div>
+        </div>
+      </div>
+      <div class="fear-cell right">
+        <span class="fear-emoji">🤝</span>
+        <div>
+          <div class="fear-title-good">Mia vše vysvětlí krok za krokem</div>
+          <div class="fear-text">Nemusíte rozumět kryptu. Mia provede celým procesem — stačí napsat.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fear-row">
+      <div class="fear-cell left">
+        <span class="fear-emoji">⏳</span>
+        <div>
+          <div class="fear-title-bad">„Výsledky přijdou až za roky"</div>
+          <div class="fear-text">Investice trvají roky, než uvidím nějaký výnos.</div>
+        </div>
+      </div>
+      <div class="fear-cell right">
+        <span class="fear-emoji">⚡</span>
+        <div>
+          <div class="fear-title-good">Výnos už za 14–21 dní</div>
+          <div class="fear-text">Program trvá pouhé 2–3 týdny. Výsledky vidíte rychle, ne za roky.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fear-row">
+      <div class="fear-cell left">
+        <span class="fear-emoji">🕵️</span>
+        <div>
+          <div class="fear-title-bad">„Je to podvod, nevěřím tomu"</div>
+          <div class="fear-text">Všechny podobné věci jsou scam — raději nic neriskuji.</div>
+        </div>
+      </div>
+      <div class="fear-cell right">
+        <span class="fear-emoji">⭐</span>
+        <div>
+          <div class="fear-title-good">Přes 1 200 spokojených klientů za 5 let</div>
+          <div class="fear-text">Reální účastníci s reálnými zkušenostmi. Přečtěte si jejich recenze níže.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fear-cta">
+    <span style="font-size:13px;color:#888;">Stále máte otázky? Napište Mii přímo.</span>
+    <a href="https://wa.me/420704800338" target="_blank" class="btn-gold" style="padding:9px 18px;font-size:13px;">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Napsat Mii
+    </a>
+  </div>
+</div>
+
+<div class="reviews-sec">
+  <div class="reviews-head">Co říkají naši účastníci</div>
+  <div class="reviews-sub">Reálné zkušenosti lidí, kteří už program absolvovali</div>
+  <div class="reviews-carousel">
+    <div class="reviews-track" id="revTrack">
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">PK</div><div><div class="review-name">Petr K., Brno</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">11.05.2024</div>
+        <p class="review-text">no fakt jsem nečekal že to bude takhle jednoduchý, za pár minut jsem všemu rozuměl, Mia odepisovala docela rychle</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">VS</div><div><div class="review-name">Veronika S., Praha</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">03.06.2024</div>
+        <p class="review-text">líbí se mi že vidím průběžně co se děje s penězi, druhej cyklus jsem si prodloužila sama bez ptaní</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">TH</div><div><div class="review-name">Tomáš H., Liberec</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★☆</div><div class="review-date">28.07.2024</div>
+        <p class="review-text">výsledek byl ok, čekal jsem trochu víc ale řekli mi že na větší výnos bych musel čekat skoro rok dýl, tak jsem zůstal u kratší varianty</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">MD</div><div><div class="review-name">Martin D., Ostrava</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">14.08.2024</div>
+        <p class="review-text">komunikace bez problemu, vše proběhlo přesně jak bylo řečeno predem. doporučím i klukum z práce</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">KN</div><div><div class="review-name">Kateřina N., Olomouc</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">02.09.2024</div>
+        <p class="review-text">na začátku jsem byla dost nedůvěřivá ale po verifikaci a vysvětlení jsem se uklidnila, Mia to vysvětlí normálně lidsky</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">JR</div><div><div class="review-name">Jakub R., Plzeň</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★☆</div><div class="review-date">19.09.2024</div>
+        <p class="review-text">celkem spokojenost, jen o víkendu odpovědi trvaly trochu dýl, jinak bez problému</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">LM</div><div><div class="review-name">Lucie M., Brno</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">05.10.2024</div>
+        <p class="review-text">popravdě jsem čekala složitější proces, ale bylo to jednoduchý. peníze přišly v pořádku</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">ON</div><div><div class="review-name">Ondřej N., Praha</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">22.10.2024</div>
+        <p class="review-text">Mia vše vysvětlila, ani jsem se moc neptal. šlo to samo, doporučuju zkusit</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">RK</div><div><div class="review-name">Radka K., Zlín</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">08.11.2024</div>
+        <p class="review-text">třetí cyklus a pořád spokojená, každej cyklus přichází výnos včas, žádný problém</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">MV</div><div><div class="review-name">Michal V., České Budějovice</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★☆☆</div><div class="review-date">27.11.2024</div>
+        <p class="review-text">výnos byl nižší než jsem čekal, ale Mia to předem říkala že záleží na trhu. aspoň nestratil</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">JN</div><div><div class="review-name">Jana N., Hradec Králové</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">12.12.2024</div>
+        <p class="review-text">super zkušenost, nic složitýho, vše šlo hladce a Mia byla vždy dostupná</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">DP</div><div><div class="review-name">David P., Pardubice</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">03.01.2025</div>
+        <p class="review-text">kamarád mě doporučil, ze začátku jsem nevěřil ale nakonec jsem rád že jsem to zkusil</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">AB</div><div><div class="review-name">Alena B., Ústí nad Labem</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★☆</div><div class="review-date">18.01.2025</div>
+        <p class="review-text">docela dobrý, jediný co mi chybělo je víc info o průběhu ale jinak v pořádku</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">FK</div><div><div class="review-name">Filip K., Brno</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">07.02.2025</div>
+        <p class="review-text">druhej cyklus, výsledky lepší než první, zdá se že čím víc vložíš tím líp to vychází</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">SP</div><div><div class="review-name">Simona P., Praha</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">24.02.2025</div>
+        <p class="review-text">Mia je fakt příjemná, odpovídá rychle, a celej process je přehlednej</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">TO</div><div><div class="review-name">Tomáš O., Olomouc</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">11.03.2025</div>
+        <p class="review-text">vše proběhlo bez problémů, výsledky přišly přesně po 18 dnech jak bylo domluveno</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">EH</div><div><div class="review-name">Eva H., Ostrava</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★☆</div><div class="review-date">29.03.2025</div>
+        <p class="review-text">spokojená, výnos byl přibližně jak bylo řečeno. chtěla bych víc možností výběru kryptoměn ale to je detail</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">PM</div><div><div class="review-name">Pavel M., Liberec</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">14.04.2025</div>
+        <p class="review-text">ze začátku opatrnej ale teď jsem v třetím cyklu a bez výhrady doporučuju</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">ZK</div><div><div class="review-name">Zuzana K., Jihlava</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">02.05.2025</div>
+        <p class="review-text">rychlá komunikace, všechno proběhlo jak má. Mia je fakt spolehlivá</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">JV</div><div><div class="review-name">Jan V., Kladno</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">20.05.2025</div>
+        <p class="review-text">dobrá zkušenost, doporučil jsem to manželce a ta je taky spokojená</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">RN</div><div><div class="review-name">Renata N., Znojmo</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★☆</div><div class="review-date">06.06.2025</div>
+        <p class="review-text">docela dobrý, jediný co bych zlepšila je víc zpráv během cyklu aby člověk věděl jak to jde</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">BJ</div><div><div class="review-name">Bc. Jiří B., Praha</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">23.06.2025</div>
+        <p class="review-text">přesně to co jsem hledal, pasivní příjem bez nutnosti rozumět kryptu do hloubky</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">HK</div><div><div class="review-name">Hana K., Přerov</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">09.07.2025</div>
+        <p class="review-text">Mia vždy odpoví a vše vysvětlí, cítím se bezpečně s každým cyklem víc</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">LB</div><div><div class="review-name">Lukáš B., Plzeň</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">28.07.2025</div>
+        <p class="review-text">super, nic komplikovanýho, doporučuju každýmu kdo chce zkusit krypto bez rizika nákupu</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">MP</div><div><div class="review-name">Monika P., Brno</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">12.08.2025</div>
+        <p class="review-text">čtvrtý cyklus za sebou a pořád spokojená, výnosy jsou stabilní</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">VN</div><div><div class="review-name">Vladimír N., Opava</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★☆</div><div class="review-date">30.08.2025</div>
+        <p class="review-text">solidní, výsledek odpovídal tomu co Mia říkala. trochu jsem čekal víc ale chápu že trh kolísá</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">IK</div><div><div class="review-name">Ivana K., Praha</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">15.09.2025</div>
+        <p class="review-text">všechno proběhlo hladce, Mia odepisuje rychle i přes víkend</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">JH</div><div><div class="review-name">Josef H., Jihlava</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">01.10.2025</div>
+        <p class="review-text">dobrá spolupráce, přehledný, výsledky přišly v termínu jak bylo domluveno</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">TF</div><div><div class="review-name">Tereza F., České Budějovice</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">18.10.2025</div>
+        <p class="review-text">kamarádka mě doporučila a nelituju, druhej cyklus jsem zahájila hned po prvním</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">RV</div><div><div class="review-name">Roman V., Ostrava</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">05.11.2025</div>
+        <p class="review-text">fajn zkušenost, vše proběhlo bez problémů a výnos byl přesně jak bylo řečeno</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">NK</div><div><div class="review-name">Nikola K., Zlín</div><div class="review-loc">Účastnice programu</div></div></div>
+        <div class="review-stars">★★★★★</div><div class="review-date">22.11.2025</div>
+        <p class="review-text">Mia je super, vše mi vysvětlila, jsem spokojená a chystám se na další cyklus</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">MS</div><div><div class="review-name">Marek S., Pardubice</div><div class="review-loc">Účastník programu</div></div></div>
+        <div class="review-stars">★★★★☆</div><div class="review-date">02.03.2026</div>
+        <p class="review-text">celkově dobrá zkušenost, jen bych uvítal trochu víc průběžných aktualizací ale výsledek byl ok</p>
+      </div>
+
+    </div>
+    <div class="reviews-nav">
+      <button onclick="revScroll(-1)" title="Předchozí">&#8592;</button>
+      <button onclick="revScroll(1)" title="Další">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<div class="contact-sec">
+  <div class="contact-left">
+    <h2>Napište mi osobně</h2>
+    <p>Jsem Mia Markovič a za každou investicí v tomto programu stojím já osobně. Odpovídám na všechny zprávy — obvykle do pár hodin.</p>
+    <div class="contact-btns">
+      <a href="https://wa.me/420704800338" target="_blank" class="contact-btn whatsapp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+      <a href="mailto:mia.ahoj@email.cz" class="contact-btn email"><i class="ti ti-mail" aria-hidden="true"></i> mia.ahoj@email.cz</a>
+    </div>
+  </div>
+  <img class="contact-photo" src="data:image/jpeg;base64,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" alt="Mia Markovič">
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-icon"><i class="ti ti-users" aria-hidden="true"></i></div><span class="stat-val">1 200+</span><span class="stat-label">Spokojených klientů</span></div>
+  <div class="stat-item"><div class="stat-icon"><i class="ti ti-calendar" aria-hidden="true"></i></div><span class="stat-val">5+ let</span><span class="stat-label">Zkušeností v krypto</span></div>
+  <div class="stat-item"><div class="stat-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div><span class="stat-val">98%</span><span class="stat-label">Aktiv pojištěno</span></div>
+  <div class="stat-item"><div class="stat-icon"><i class="ti ti-star" aria-hidden="true"></i></div><span class="stat-val">4.9 / 5</span><span class="stat-label">Hodnocení klientů</span></div>
+</div>
+
+<a class="wa-float" href="https://wa.me/420704800338" target="_blank" title="WhatsApp">
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+</a>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://wa.me/420704800338" target="_blank" class="btn-gold" style="flex:1;justify-content:center;"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Začít investovat</a>
+  <button class="btn-dark" onclick="scrollToCalc()" style="flex:1;justify-content:center;"><i class="ti ti-calculator" aria-hidden="true"></i> Výnos</button>
+</div>
+
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-popup">
+    <button class="exit-popup-close" onclick="closeExit()">✕</button>
+    <div class="exit-popup-icon">⚠️</div>
+    <h3>Počkejte!</h3>
+    <p>Už se připojilo:</p>
+    <div class="exit-popup-count" id="exitCount">37</div>
+    <div class="exit-popup-sub">účastníků z 150 v aktuálním cyklu</div>
+    <div class="exit-popup-btns">
+      <a href="https://wa.me/420704800338" target="_blank" class="btn-gold"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Napsat Mii nyní</a>
+    </div>
+    <div class="exit-popup-skip" onclick="closeExit()">Ne, odcházím bez výnosu</div>
+  </div>
+</div>
+
+<script>
+// Urgency counter + countdown (každých 48h +1 účastník)
+(function(){
+  var EPOCH=new Date('2026-06-22T00:00:00').getTime(), START=37, MAX=150, MS48=172800000;
+  function upd(){
+    var now=Date.now(), periods=Math.floor((now-EPOCH)/MS48);
+    var joined=Math.min(START+periods,MAX);
+    var pct=Math.round(joined/MAX*100);
+    var ne=document.getElementById('urgency-num'), be=document.getElementById('urgency-bar');
+    if(ne) ne.textContent=joined;
+    if(be) be.style.width=pct+'%';
+    var ec=document.getElementById('exitCount'); if(ec) ec.textContent=joined;
+    var next=EPOCH+(periods+1)*MS48, left=Math.max(0,next-now);
+    var h=Math.floor(left/3600000), m=Math.floor((left%3600000)/60000), s=Math.floor((left%60000)/1000);
+    var p=function(n){return n<10?'0'+n:''+n;};
+    var uh=document.getElementById('u-h'),um=document.getElementById('u-m'),us=document.getElementById('u-s');
+    if(uh) uh.textContent=p(h); if(um) um.textContent=p(m); if(us) us.textContent=p(s);
+  }
+  upd(); setInterval(upd,1000);
+})();
+
+// Scroll
+function scrollToCalc(){var e=document.getElementById('calc-anchor');if(e) e.scrollIntoView({behavior:'smooth',block:'center'});}
+
+// Carousel
+function revScroll(d){var t=document.getElementById('revTrack');if(t) t.scrollBy({left:d*252,behavior:'smooth'});}
+(function(){
+  var t=document.getElementById('revTrack'); if(!t) return;
+  var dn=false,sx,sl;
+  t.addEventListener('mousedown',function(e){dn=true;t.classList.add('grabbing');sx=e.pageX-t.offsetLeft;sl=t.scrollLeft;});
+  t.addEventListener('mouseleave',function(){dn=false;t.classList.remove('grabbing');});
+  t.addEventListener('mouseup',function(){dn=false;t.classList.remove('grabbing');});
+  t.addEventListener('mousemove',function(e){if(!dn)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-sx)*1.5;});
+})();
+
+// Calculator
+function doCalc(){
+  var a=parseFloat(document.getElementById('c-amount').value)||0;
+  var r=parseFloat(document.getElementById('c-rate').value)||0;
+  var d=parseFloat(document.getElementById('c-days').value)||18;
+  var cur=document.getElementById('c-cur').value;
+  if(a<=0||r<=0){document.getElementById('c-daily').textContent='Zadejte částku a %';document.getElementById('c-profit').textContent='—';document.getElementById('c-total').textContent='—';return;}
+  var dp=a*(r/100), tp=dp*d, tot=a+tp;
+  var fmt=function(n){return n.toLocaleString('cs-CZ',{maximumFractionDigits:2})+' '+cur;};
+  document.getElementById('c-daily').textContent=fmt(dp);
+  document.getElementById('c-profit').textContent=fmt(tp);
+  document.getElementById('c-total').textContent=fmt(tot);
+}
+
+// Sticky CTA mobile
+(function(){
+  var cta=document.getElementById('stickyCta'); if(!cta) return;
+  var shown=false;
+  window.addEventListener('scroll',function(){
+    if(window.innerWidth>768) return;
+    if(window.scrollY>300&&!shown){cta.style.display='flex';shown=true;}
+    else if(window.scrollY<=300&&shown){cta.style.display='none';shown=false;}
+  });
+})();
+
+// Exit popup
+(function(){
+  var shown=false, ov=document.getElementById('exitOverlay'); if(!ov) return;
+  document.addEventListener('mouseleave',function(e){if(e.clientY<=0&&!shown){shown=true;ov.classList.add('show');}});
+})();
+function closeExit(){var o=document.getElementById('exitOverlay');if(o) o.classList.remove('show');}
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a39627a65eba51d440bfb95/1jro2hcbm';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
